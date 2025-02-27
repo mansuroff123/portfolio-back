@@ -1,0 +1,296 @@
+/* heebo-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/heebo-v26-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/heebo-v26-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* heebo-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/heebo-v26-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/heebo-v26-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* heebo-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/heebo-v26-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/heebo-v26-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* heebo-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/heebo-v26-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/heebo-v26-latin-900.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Heebo';
+    font-size: 16px;
+    font-weight: 400;
+}
+
+:root {
+  --dark-font: #21243D;
+  --btn-color: #FF6464;
+  --link-color: #00A8CC;
+  --blog-bg: #EDF7FA;
+}
+
+
+.my_text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-font);
+}
+
+/* -------------------- Home Section Begin -------------------- */
+
+.my_nav {
+    font-weight: 500;
+    font-size: 20px;
+    color: #000;
+}
+
+.home .active {
+  color: var(--btn-color) !important;
+}
+
+.btn_cs {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  padding: 8px 20px;
+  background-color: var(--btn-color);
+}
+.btn_cs:hover {
+  background-color: #fe8686;
+  color: #fff;
+}
+
+.home_title {
+  color: var(--dark-font);
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.home_img {
+  width: 80%;
+  height: auto;
+}
+
+/* -------------------- Home Section End -------------------- */
+
+
+
+/* -------------------- Recent Blog Section Begin -------------------- */
+
+.blog {
+  background-color: var(--blog-bg);
+}
+
+.page_title {
+  font-size: 22px;
+}
+
+.view {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.view:hover {
+  color: #11d3ff;
+}
+
+.date_title {
+  font-size: 18px;
+  color: var(--dark-font);
+}
+
+.blog_title {
+  font-size: 26px;
+  color: var(--dark-font);
+  font-weight: 700;
+}
+
+.my_card {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 10px 0px #BBE1FA40;
+  transition: 0.5s;
+  border: 2px dashed white;
+}
+
+.my_card:hover {
+  box-shadow: 15px 15px;
+  /*border: 2px dashed black;*/
+}
+
+.blog_title_2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #21243D;
+}
+
+.blog_title_2:hover {
+    color: #2c39b0;
+}
+
+.blog_date {
+  font-size: 20px;
+}
+
+
+.detail_title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #21243D;
+}
+
+.comment_title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #21243D;
+}
+
+.comment_field {
+  box-shadow: 0px 4px 8px rgba(10, 58, 100, 0.15);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #FF6464;
+}
+
+.comment_text {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+
+
+
+
+/* -------------------- Recent Blog Section End -------------------- */
+
+/* -------------------- Featured Works Section Begin -------------------- */
+
+.works_title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #21243D;
+}
+
+.works_title:hover {
+  color: #2c39b0;
+}
+
+.year {
+  font-weight: 900;
+  font-size: 18px;
+  background-color: #142850;
+  color: #fff;
+  border-radius: 16px;
+  padding: 1px 10px;
+}
+
+.tags {
+  font-size: 20px;
+  color: #8695A4;
+}
+
+.work_year {
+  font-weight: 900;
+  font-size: 18px;
+  background-color: #FF7C7C;
+  color: #fff;
+  border-radius: 16px;
+  padding: 1px 10px;
+}
+
+.work_tags {
+  font-size: 20px;
+  color: #21243D;
+}
+/* -------------------- Featured Works Section End -------------------- */
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .home_title {
+    font-size: 32px;
+  }
+  .home_img {
+    width: 80%;
+    height: auto;
+  }
+
+  .page_title {
+    font-size: 18px;
+  }
+
+  .date_title {
+    font-size: 16px;
+  }
+  
+  .blog_title {
+    font-size: 22px;
+  }
+
+  
+.works_title {
+  font-size: 24px;
+}
+
+.year {
+  font-size: 16px;
+}
+
+.tags {
+  font-size: 16px;
+}
+
+.work_year {
+  font-size: 18px;
+}
+
+.work_tags {
+  font-size: 18px;
+}
+
+.my_card:hover {
+  box-shadow: 8px 8px;
+  border: 2px dashed black;
+}
+
+.blog_title_2 {
+  font-size: 26px;
+}
+
+.blog_date {
+  font-size: 16px;
+}
+
+.detail_title {
+  font-size: 30px;
+}
+
+}

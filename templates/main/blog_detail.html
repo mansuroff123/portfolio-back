@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog detail {% endblock %}
+
+{% block content %}
+    <style>
+        p img {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+    <!-- ################### Blog detail Section Begin ################### -->
+    <div class="container py-5">
+      <div class="d-flex flex-column gap-4">
+        <div class="detail_title">
+          {{ post.title }}
+        </div>
+
+        <div class="d-flex gap-3 flex-wrap">
+          <span class="blog_date"> {{ post.date_posted|date:"j M Y"}} </span>
+          <span class="blog_date">|</span>
+          <span class="tags"> {% for tag in post.tags.all %} {{ tag.name|capfirst }} {% if not forloop.last %}, {% endif %} {% endfor %} </span>
+        </div>
+
+        {{ post.content|safe }}
+
+        <!-- comment start -->
+        <div>
+          <h2 class="comment_title mb-4">Comments</h2>
+          <div class="d-flex flex-column row-gap-4">
+            <div class="comment_field d-flex flex-column gap-4">
+                <div class="profile d-flex gap-2 align-items-end">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small_2x/profile-icon-design-free-vector.jpg" alt="profile img" width="32px" height="32px"/>
+                  <h5 class="profile_name m-0">John Doe</h5>
+                </div>
+                <form>
+                  <textarea
+                    class="comment_text"
+                    rows="5"
+                    placeholder="Write your comment.."
+                  ></textarea>
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-sm btn_cs">Add Comment</button>
+                  </div>
+                </form>
+              </div>
+
+              <hr>
+              <div class="d-flex flex-column gap-4">
+                <div class="profile d-flex gap-2 align-items-end">
+                  <div class="d-flex gap-2 align-items-center">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small_2x/profile-icon-design-free-vector.jpg" alt="profile img" width="32px" height="32px" />
+                    <h5 class="profile_name m-0">Jane Rose</h5>
+                    <div class="text-secondary ms-3" style="font-size: 12px;">4 min ago</div>
+                  </div>
+                </div>
+                <p>
+                  I really appreciate the insights and perspective shared in this
+                  article. It's definitely given me something to think about and has
+                  helped me see things from a different angle. Thank you for writing
+                  and sharing!
+                </p>
+              </div>
+              <hr>
+
+          </div>
+        </div>
+
+        <!-- comment end -->
+      </div>
+    </div>
+    <!-- ################### Blog detail Section End ################### -->
+{% endblock %}
