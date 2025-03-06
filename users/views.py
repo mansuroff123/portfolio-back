@@ -1,10 +1,12 @@
 from django.contrib.auth import login, logout
-from django.contrib.auth.views import LoginView
-from django.shortcuts import render
-from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView, PasswordChangeView
+from django.shortcuts import render, redirect
+from django.views.generic import CreateView, DetailView, UpdateView
 from .models import CustomUser
 from .forms import UserSignUpForm, UserSignInForm, UserUpdateForm
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 # Create your views here.
 
@@ -29,5 +31,32 @@ class SignInView(LoginView):
 
 def user_logout(request):
     logout(request)
-    return render(request, 'main/auth/sign_in.html')
+    return redirect('login')
 
+
+class ProfileView(LoginRequiredMixin, DetailView):
+    model = CustomUser
+    template_name = 'main/profile.html'
+    context_object_name = 'user_profile'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+class ProfileEditView(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = UserUpdateForm
+    template_name = 'main/profile_edit.html'
+    context_object_name = 'user_profile'
+    success_url = reverse_lazy('profile')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+class UserPasswordChangeView(PasswordChangeView):
+    template_name = 'main/change-password.html'
+    success_url = reverse_lazy('profile')
+
+    def form_valid(self, form):
+        messages.success(self.request, '✅ Your password has been changed successfully')
+        return super().form_valid(form)

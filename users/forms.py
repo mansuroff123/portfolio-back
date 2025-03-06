@@ -21,14 +21,13 @@ class UserSignInForm(AuthenticationForm):
 
 
 class UserUpdateForm(UserChangeForm):
-    first_name = forms.CharField(required=True)
+    first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Write your name..'}))
     username = forms.CharField(required=True)
 
     class Meta:
         model = CustomUser
         fields = ['first_name', 'last_name', 'username', 'email', 'profile_image', 'bio']
         widgets = {
-            'first_name': forms.TextInput(attrs={'placeholder': 'Write your name..'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Write your last name..'}),
             'username': forms.TextInput(attrs={'placeholder': 'Write your username..'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Write your email..'}),
