@@ -30,7 +30,7 @@
                 <a class="nav-link my_nav {% if request.path == '/blog/' or request.resolver_match.url_name == 'blog-detail' %}active{% endif %}" href="{% url 'blog' %}">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link my_nav" href="works.html">Works</a>
+                <a class="nav-link my_nav {% if request.path == '/works/' or request.resolver_match.url_name == 'work-detail' %}active{% endif %}" href="{% url 'works' %}">Works</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link my_nav" href="contact.html">Contact</a>

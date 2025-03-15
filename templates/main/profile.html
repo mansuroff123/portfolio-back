@@ -24,7 +24,7 @@
                 {% endif %}
                 <h3>Username: {{ user_profile.username }}</h3>
                 <p><strong>Full Name:</strong> {{ user_profile.first_name }} {{ user_profile.last_name }}</p>
-                <p><strong>Email</strong> {{ user_profile.email }}</p>
+                <p><strong>Email</strong> {{ user_profile.email|default:"Email not yet set up" }}</p>
                 <p><strong>Bio:</strong> {{ user_profile.bio|default:"No bio available" }}</p>
                 {% if user == user_profile %}
                     <a href="{% url 'profile-edit' %}" class="btn btn-primary">Edit Profile</a>

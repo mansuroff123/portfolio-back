@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'users',
     'blog',
     'works',
-    'contact',
+    'tags',
 
     'ckeditor',
     'ckeditor_uploader',

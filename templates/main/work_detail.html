@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Work Detail
+{% endblock %}
+
+{% block content %}
+    <!-- ################### Work detail Section Begin ################### -->
+    <div class="container py-5">
+      <div class="d-flex flex-column gap-4">
+        <div class="detail_title">
+            {{ work.title }}
+          </div>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <span class="work_year">{{ work.date_posted|date:"Y" }}</span>
+            <span class="work_tags">{% for tag in work.tags.all %} {{ tag|capfirst }}{% if not forloop.last %}, {% endif %} {% endfor %}</span>
+          </div>
+
+          <img src="{{ work.work_image.url }}" alt="{{ work.title }}" class="img-fluid" style="width: 50%; height: auto; border-radius: 6px;">
+
+          <p>
+            {{ work.content|safe }}
+          </p>
+      </div>
+    </div>
+    <!-- ################### Work detail Section End ################### -->
+{% endblock %}
